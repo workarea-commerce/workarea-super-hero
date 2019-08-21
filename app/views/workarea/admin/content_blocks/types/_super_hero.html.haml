@@ -1,0 +1,106 @@
+%h3.legend-heading.legend-heading--4= t("workarea.admin.content_blocks.types.super_hero.super_hero")
+%fieldset
+  -# Media fields begin
+  .property
+    = label_tag dom_id(block, :"media_mode_for"), class: 'property__name' do
+      %span.property__text= t("workarea.admin.content_blocks.types.super_hero.media_mode")
+    .value= select_tag "block[data][media_mode]", options_for_select([['Resize', 'resize'],['Crop', 'crop'], ['Switch', 'switch'], ['Video', 'video']], block.data["media_mode"]), id: dom_id(block, :"media_mode_for"), data: {media_mode: 'control'}
+  .toggle-group{data: {media_mode: ['resize', 'crop', 'switch'] }}
+    .property.property--stacked
+      = label_tag dom_id(block, :"media_for"), class: 'property__name' do
+        %span.property__text= t("workarea.admin.content_blocks.types.super_hero.media")
+        %span.property__requirement *
+      .value
+        .asset-picker-field
+          .asset-picker-field__cell= text_field_tag "block[data][media]", block.data["media"], id: dom_id(block, :"media_for"), class: 'text-box text-box--i18n'
+          .asset-picker-field__cell= link_to t("workarea.admin.content_blocks.types.super_hero.view_assets"), insert_content_assets_url(file_type: ["image"]), class: 'text-button', data: { dialog_button: '' }
+
+  .toggle-group{data: {media_mode: ['switch'] }}
+    .property.property--stacked
+      = label_tag dom_id(block, :"media_medium_for"), class: 'property__name' do
+        %span.property__text= t("workarea.admin.content_blocks.types.super_hero.media_tablet")
+        %span.property__requirement *
+      .value
+        .asset-picker-field
+          .asset-picker-field__cell= text_field_tag "block[data][media_medium]", block.data["media_medium"], id: dom_id(block, :"media_medium_for"), class: 'text-box text-box--i18n'
+          .asset-picker-field__cell= link_to t("workarea.admin.content_blocks.types.super_hero.view_assets"), insert_content_assets_url(file_type: ["image"]), class: 'text-button', data: { dialog_button: '' }
+
+    .property.property--stacked
+      = label_tag dom_id(block, :"media_small_for"), class: 'property__name' do
+        %span.property__text= t("workarea.admin.content_blocks.types.super_hero.media_mobile")
+        %span.property__requirement *
+      .value
+        .asset-picker-field
+          .asset-picker-field__cell= text_field_tag "block[data][media_small]", block.data["media_small"], id: dom_id(block, :"media_small_for"), class: 'text-box text-box--i18n'
+          .asset-picker-field__cell= link_to t("workarea.admin.content_blocks.types.super_hero.view_assets"), insert_content_assets_url(file_type: ["image"]), class: 'text-button', data: { dialog_button: '' }
+
+  .toggle-group{data: {media_mode: ['crop'] }}
+    .property
+      = label_tag dom_id(block, :"crop_side_for"), class: 'property__name' do
+        %span.property__text= t("workarea.admin.content_blocks.types.super_hero.crop_to")
+      .value= select_tag "block[data][crop_side]", options_for_select(['center', 'left', 'right'], block.data["crop_side"]), id: dom_id(block, :"crop_side_for")
+
+  .toggle-group{data: {media_mode: ['video'] }}
+
+    .property.property--stacked
+      = label_tag "block[data][video_embed]", for: dom_id(block, :"video_embed_for"), class: 'property__name' do
+        %span.property__text= t("workarea.admin.content_blocks.types.super_hero.video_embed_code")
+        %span.property__requirement *
+    .value
+      = text_area_tag "block[data][video_embed]", block.data["video_embed"], id: dom_id(block, :"video_embed_for"), class: 'text-box text-box--multi-line text-box--i18n'
+    = render "workarea/admin/content_blocks/templates/video_content_options", block: block, count: nil, fields: %w{autoplay loop mute}
+
+  -# Content fields begin
+  .property.property--stacked
+    = label_tag "block[data][html]", for: dom_id(block, :"html_for"), class: 'property__name' do
+      %span.property__text= t("workarea.admin.content_blocks.types.super_hero.content")
+    .value
+      .wysiwyg= text_area_tag "block[data][html]", block.data["html"], id: dom_id(block, :"html_for"), class: 'text-box text-box--multi-line text-box--i18n', data: { toolbar: "#{block.config[:wysiwyg_toolbar]}" }
+
+  .property
+    = label_tag dom_id(block, :"link_text_for"), class: 'property__name' do
+      %span.property__text= t("workarea.admin.content_blocks.types.super_hero.link_text")
+    .value= text_field_tag "block[data][link_text]", block.data["link_text"], id: dom_id(block, :"link_text_for"), class: 'text-box text-box--i18n'
+
+  .property
+    = label_tag dom_id(block, :"link_url_for"), class: 'property__name' do
+      %span.property__text= t("workarea.admin.content_blocks.types.super_hero.link_url")
+    .value= text_field_tag "block[data][link_url]", block.data["link_url"], id: dom_id(block, :"link_url_for"), class: 'text-box text-box--i18n'
+
+  -# Content Options Begin
+  .property.property--stacked{ data: {position_input: ''}}
+    = label_tag dom_id(block, :"content_position_for"),class: 'property__name' do
+      %span.property__text= t("workarea.admin.content_blocks.types.super_hero.content_position")
+    .value
+      =select_tag "block[data][content_position]", options_for_select(['top-left', 'top-center', 'top-right', 'middle-left', 'middle-center', 'middle-right', 'bottom-left', 'bottom-center', 'bottom-right'], block.data["content_position"]), id: dom_id(block, :"content_position_for"), class: 'position-grid--input'
+      = inline_svg 'workarea/svg/position_grid'
+
+  .property
+    = label_tag dom_id(block, :"text_color_for"), class: 'property__name' do
+      %span.property__text= t("workarea.admin.content_blocks.types.super_hero.text_color")
+    %input{type: 'color', name: "block[data][text_color]",id: dom_id(block, :"text_color_for"), class: 'color-picker', value: block.data["text_color"], list: 'colors'}
+    %datalist{id: 'colors'}
+      - block.config[:text_colors].each do |color|
+        %option= color
+
+  .property.property--stacked
+    = label_tag dom_id(block, :"background_for"), class: 'property__name' do
+      %span.property__text= t("workarea.admin.content_blocks.types.super_hero.background")
+    .value
+      .property.property--inline
+        %input{type: 'color', name: "block[data][background]",id: dom_id(block, :"background_for"), class: 'color-picker', value: block.data["background"], list: 'colors'}
+        %datalist{id: 'colors'}
+          - block.config[:background_colors].each do |color|
+            %option= color
+
+      .property.property--inline
+        .value{data: {range_field:''}}
+          %input{type: 'range', name: "block[data][background_alpha]",id: dom_id(block, :"background_alpha_for"), class: 'range-input', max: '100', min: '0', value: block.data["background_alpha"], list: 'alphas'}
+          %datalist{id: 'alphas'}
+            - 11.times do |i|
+              %option= i * 10
+          = text_field_tag "background_alpha", block.data["background_alpha"], class: 'text-box--mini text-box--i18n'
+
+.form-action
+  .action-group
+    %p.action-group__item= button_tag 'Clear Content', { class: 'button', data: {content_block_clear_fieldset: ''}}

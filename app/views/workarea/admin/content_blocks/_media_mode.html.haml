@@ -1,0 +1,3 @@
+.property
+  = label_tag dom_id(block, field.slug), field.name, class: 'property__name'
+  = select_tag "block[data][#{field.slug}]", options_for_select([['Resize', 'resize'],['Crop', 'crop'], ['Switch', 'switch'], ['Video', 'video']], block.data["#{field.slug}"]), id: dom_id(block, field.slug), data: { media_mode: 'control' }

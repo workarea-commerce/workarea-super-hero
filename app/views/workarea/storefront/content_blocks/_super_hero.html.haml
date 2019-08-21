@@ -1,0 +1,27 @@
+.super-hero-content-block
+  - if content.present? || local_assigns[:link_text].present?
+    .super-hero-content-block__content{ class: view_model.content_class, style: view_model.content_styles }
+      - if content.present?
+        != content
+      - if link_text.present? && link.present?
+        %p.content-block__action= link_to link_text, link, class: link_style
+
+  - if media_mode == 'video'
+    - if video.present?
+      .super-hero-content-block__media-container.super-hero-content-block__media-container--maintain-aspect-ratio{ style: "#{view_model.video_iframe_attrs[:container_style]}" }
+        %iframe.super-hero-content-block__media{ view_model.video_iframe_attrs }
+
+  - elsif media_mode == 'switch'
+    - if view_model.image.url.present?
+      = link_to_if_with_block link.present?, link do
+        .super-hero-content-block__media-container{ style: view_model.media_styles }
+          %picture{ class: "super-hero-content-block__media--#{view_model.media_class}" }
+            %source{ srcset: view_model.image.url, media: "(min-width:#{view_model.breakpoints[:wide]}px)" }
+            %source{ srcset: view_model.image_medium_url, media: "(min-width:#{view_model.breakpoints[:medium]}px)" }
+            %source{ srcset: view_model.image_small_url }
+            = image_tag( view_model.image.url, alt: view_model.alt_text, itemprop: 'image')
+
+  - else
+    = link_to_if_with_block link.present?, link do
+      .super-hero-content-block__media-container.super-hero-content-block__media-container--maintain-aspect-ratio{ style: view_model.media_styles }
+        .super-hero-content-block__media{ class: "super-hero-content-block__media--#{view_model.media_class}", style: "background-image: url(#{view_model.image.url})" }

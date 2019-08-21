@@ -1,0 +1,23 @@
+---
+en:
+  workarea:
+    admin:
+      content_blocks:
+        types:
+          super_hero:
+            background: Background (color, transparency)
+            content: Content
+            content_position: Content Position
+            crop_to: Crop to
+            link_text: Link Text
+            link_url: Link URL
+            media: Media
+            media_mobile: Media - Mobile
+            media_tablet: Media - Tablet
+            media_mode: Media Mode
+            super_hero: Super Hero
+            text_color: Text Color
+            video_embed_code: Video Embed Code
+            view_assets: View Assets
+        video_advanced:
+          video_options: Video Options

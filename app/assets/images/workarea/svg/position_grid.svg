@@ -1,0 +1,38 @@
+<svg id="position_grid" class="position-grid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+  <g id="top-left">
+    <path class="position-grid__cell" d="M1 1h49.9v50.2H1z"/>
+    <path class="position-grid__cell-path" d="M49.4 2.5v47.2H2.5V2.5h46.9m3-3H-.5v53.2h52.9V-.5z"/>
+  </g>
+  <g id="top-center">
+    <path class="position-grid__cell" d="M50.1 1H100v50.2H50.1z"/>
+    <path class="position-grid__cell-path" d="M98.4 2.5v47.2H51.6V2.5h46.8m3-3H48.6v53.2h52.9V-.5h-.1z"/>
+  </g>
+  <g id="top-right">
+    <path class="position-grid__cell" d="M99.1 1H149v50.2H99.1z"/>
+    <path class="position-grid__cell-path" d="M147.5 2.5v47.2h-46.9V2.5h46.9m3-3H97.6v53.2h52.9V-.5z"/>
+  </g>
+  <g id="middle-left">
+    <path class="position-grid__cell" d="M1 49.9h49.9v50.2H1z"/>
+    <path class="position-grid__cell-path" d="M49.4 51.4v47.2H2.5V51.4h46.9m3-3H-.5v53.2h52.9V48.4z"/>
+  </g>
+  <g id="middle-center">
+    <path class="position-grid__cell" d="M50.1 49.9H100v50.2H50.1z"/>
+    <path class="position-grid__cell-path" d="M98.4 51.4v47.2H51.6V51.4h46.8m3-3H48.6v53.2h52.9V48.4h-.1z"/>
+  </g>
+  <g id="middle-right">
+    <path class="position-grid__cell" d="M99.1 49.9H149v50.2H99.1z"/>
+    <path class="position-grid__cell-path" d="M147.5 51.4v47.2h-46.9V51.4h46.9m3-3H97.6v53.2h52.9V48.4z"/>
+  </g>
+  <g id="bottom-left">
+    <path class="position-grid__cell" d="M1 98.8h49.9V149H1z"/>
+    <path class="position-grid__cell-path" d="M49.4 100.3v47.2H2.5v-47.2h46.9m3-3H-.5v53.2h52.9V97.3z"/>
+  </g>
+  <g id="bottom-center">
+    <path class="position-grid__cell" d="M50.1 98.8H100V149H50.1z"/>
+    <path class="position-grid__cell-path" d="M98.4 100.3v47.2H51.6v-47.2h46.8m3-3H48.6v53.2h52.9V97.3h-.1z"/>
+  </g>
+  <g id="bottom-right">
+    <path class="position-grid__cell" d="M99.1 98.8H149V149H99.1z"/>
+    <path class="position-grid__cell-path" d="M147.5 100.3v47.2h-46.9v-47.2h46.9m3-3H97.6v53.2h52.9V97.3z"/>
+  </g>
+</svg>

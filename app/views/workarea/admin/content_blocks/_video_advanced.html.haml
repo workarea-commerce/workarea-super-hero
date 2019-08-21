@@ -1,0 +1,12 @@
+.property{ class: ('property--required' if field.required?), data: field.options[:html_data_attributes] }
+  = label_tag dom_id(block, field.slug), field.name, class: 'property__name'
+  = text_area_tag "block[data][#{field.slug}]", block.data[field.slug], id: dom_id(block, field.slug), class: 'text-box text-box--multi-line text-box--i18n'
+
+.property{ data: field.options[:html_data_attributes] }
+  %p.property__name
+    %span.property__text= t("workarea.admin.content_blocks.video_advanced.video_options")
+  .value
+    - %w(autoplay loop mute).each do |option|
+      .property.property--stacked.property--inline-with-label
+        = label_tag dom_id(block, :"#{option}_for"), option.capitalize, class: 'property__name'
+        = select_tag "block[data][#{option}]", options_for_select([['No', 'false'], ['Yes', 'true']], block.data["#{option}"]), id: dom_id(block, "#{option}_for")

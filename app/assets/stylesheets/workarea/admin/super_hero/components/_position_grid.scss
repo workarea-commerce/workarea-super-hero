@@ -1,0 +1,27 @@
+/*------------------------------------*\
+    #POSITION-GRID
+\*------------------------------------*/
+
+$position-grid-cell-fill-color:           $white;
+$position-grid-cell-fill-color-hover:     $light-gray;
+$position-grid-cell-path-color:           $gray;
+
+.position-grid {
+    height: 150px;
+}
+
+.position-grid--input {
+    display: none;
+}
+
+    .position-grid__cell {
+        fill: $position-grid-cell-fill-color;
+
+        &:hover {
+            fill: $position-grid-cell-fill-color-hover;
+        }
+    }
+
+    .position-grid__cell-path {
+        fill: $position-grid-cell-path-color;
+    }

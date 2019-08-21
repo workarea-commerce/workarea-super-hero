@@ -1,0 +1,46 @@
+/*------------------------------------*\
+    #CONTENT-POSITION
+\*------------------------------------*/
+
+$positioning-offset: 5% !default;
+
+
+.content-position {}
+
+    .content-position--top {
+        top: $positioning-offset;
+    }
+
+    .content-position--middle {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .content-position--bottom {
+        bottom: $positioning-offset;
+    }
+
+    .content-position--left {
+        @include respond-to($medium-breakpoint) {
+            left: $positioning-offset;
+        }
+    }
+
+    .content-position--center {
+        @include respond-to($medium-breakpoint) {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        &.content-position--middle {
+            @include respond-to($medium-breakpoint) {
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    .content-position--right {
+        @include respond-to($medium-breakpoint) {
+            right: $positioning-offset;
+        }
+    }

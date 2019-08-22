@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Is it a bird? Is it a plane? No it\'s a sweet hero content block!'
   s.description = 'Advanced hero content block with content positioning, image cropping, mobile sweetness, and video embedding!'
   s.files       = `git ls-files`.split("\n")
+  s.license = 'Business Software License'
 
   s.required_ruby_version = '>= 2.0.0'
 

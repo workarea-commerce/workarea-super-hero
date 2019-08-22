@@ -5,8 +5,8 @@ require 'workarea/super_hero/version'
 Gem::Specification.new do |s|
   s.name        = 'workarea-super_hero'
   s.version     = Workarea::SuperHero::VERSION
-  s.authors     = ['Jake Beresford']
-  s.email       = ['jberesford@workarea.com']
+  s.authors     = ['Curt Howard']
+  s.email       = ['choward@workarea.com']
   s.homepage    = 'https://github.com/workarea-commerce/workarea-super_hero'
   s.summary     = 'Is it a bird? Is it a plane? No it\'s a sweet hero content block!'
   s.description = 'Advanced hero content block with content positioning, image cropping, mobile sweetness, and video embedding!'

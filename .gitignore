@@ -10,3 +10,4 @@ Gemfile.lock
 test/dummy/public/*
 .DS_STORE
 node_modules/
+.rubocop-http*

@@ -5,15 +5,9 @@ Workarea Super Hero
 
 Super Hero plugin for the Workarea platform.
 
-Configuring Super Hero for your app
+Features
 --------------------------------------------------------------------------------
 
-Superhero implements a content block type which no longer requires any initial
-configuration. You may wish to override the config for the block type in order
-to change the preset colors for background and text color pickers.
-
-What Super Hero Does
---------------------------------------------------------------------------------
 Super hero provides a fleshed out set of content tools that allows admin users to deliver beautiful content easily.
 
 ## Media Modes
@@ -54,7 +48,6 @@ The background color picker also provides a range slider and text input to contr
 
 The admin user is able to select from 9 content positions using a sweet SVG UI element. By default a position offset of 5% is defined, you can override the $positioning-offset scss variable in your host application to customize the space between content and the edge of the block.
 
-
 Video Embedder
 --------------------------------------------------------------------------------
 
@@ -83,38 +76,34 @@ Example callbacks:
 Getting Started
 --------------------------------------------------------------------------------
 
-This gem contains a rails engine that must be mounted onto a host Rails application.
+Add the gem to your application's Gemfile:
 
-You must have access to a WebLinc gems server to use this gem. Add your gems server credentials to Bundler:
-
-    bundle config gems.weblinc.com my_username:my_password
-
-Or set the appropriate environment variable in a shell startup file:
-
-    export BUNDLE_GEMS__WEBLINC__COM='my_username:my_password'
-
-Then add the gem to your application's Gemfile specifying the source:
-
-    # ...
-    gem 'workarea-super_hero', source: 'https://gems.weblinc.com'
-    # ...
-
-Or use a source block:
-
-    # ...
-    source 'https://gems.weblinc.com' do
-      gem 'workarea-super_hero'
-    end
-    # ...
+```ruby
+# ...
+gem 'workarea-super_hero'
+# ...
+```
 
 Update your application's bundle.
 
-    cd path/to/application
-    bundle
+```bash
+cd path/to/application
+bundle
+```
 
-Copyright & Licensing
+Configuration
 --------------------------------------------------------------------------------
 
-Copyright WebLinc 2015. All rights reserved.
+Superhero implements a content block type which no longer requires any initial
+configuration. You may wish to override the config for the block type in order
+to change the preset colors for background and text color pickers.
 
-For licensing, contact sales@workarea.com.
+Workarea Commerce Documentation
+--------------------------------------------------------------------------------
+
+See [https://developer.workarea.com](https://developer.workarea.com) for Workarea Commerce documentation.
+
+License
+--------------------------------------------------------------------------------
+
+Workarea Super Hero is released under the [Business Software License](LICENSE)

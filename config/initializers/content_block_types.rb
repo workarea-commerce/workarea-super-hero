@@ -1,8 +1,8 @@
-Workarea::Content.define_block_types do
+Workarea.define_content_block_types  do
   find_asset_id = lambda do |name|
     proc do
       asset = Workarea::Content::Asset.where(file_name: name).first ||
-                Workarea::Content::Asset.placeholder
+                Workarea::Content::Asset.image_placeholder
 
       asset.try(:id)
     end
